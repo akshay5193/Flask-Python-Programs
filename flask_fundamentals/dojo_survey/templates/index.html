@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="/add" method="POST">
+
+        {% with messages = get_flashed_messages() %}
+        <!-- declare a variable called messages -->
+        {% if messages %}
+        <!-- check if there are any messages -->
+        {% for message in messages %}
+        <!-- loop through the messages -->
+        <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <h1>DOJO SURVEY ASSIGNMENT</h1>
+        <h3>Please fill in the following survey form and submit it!</h3>
+
+        <br>
+
+        First Name: <input type="text" name="fname">
+        Last Name: <input type="text" name="lname">
+        <br><br>
+        Dojo Location: <select name="location">
+            <option name="Los Angeles" value="Los Angeles">Los Angeles</option>
+            <option name="Orange County" value="Orange County">Orange County</option>
+            <option name="San Jose" value="San Jose">San Jose</option>
+            <option name="Seattle" value="Seattle">Seattle</option>
+            <option name="Dallas" value="Dallas">Dallas</option>
+            <option name="New York" value="New York">New York</option>
+        </select>
+        <br><br>
+
+        Favorite Language: <select name="language">
+            <option name="JavaScript" value="JavaScript">JavaScript</option>
+            <option name="Java" value="Java">Java</option>
+            <option name="Python" value="Python">Python</option>
+            <option name="TypeScript" value="TypeScript">TypeScript</option>
+        </select>
+
+        <br><br>
+        <textarea name="comment" cols="30" rows="10"></textarea>
+
+        <br><br>
+        <!-- <button class="submit">Submit</button> -->
+        <input type="submit" value="Submit Survey">
+
+
+
+    </form>
+
+</body>
+
+</html>

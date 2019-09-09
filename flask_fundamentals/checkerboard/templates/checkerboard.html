@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="heading">
+            <h1>CHECKER BOARD</h1>
+        </div>
+
+        <div class="board">
+            <table>
+                {% for i in range (number//2) %}
+                <tr>
+                    {% for i in range (number//2) %}
+                    <td class="color1"></td>
+                    <td class="color2"></td>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    {% for i in range (number//2) %}
+                    <td class="color2"></td>
+                    <td class="color1"></td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- <div class="refactored">
+            <table>
+                {% for i in range (rows): %}
+                <tr>
+                    {% for j in range(columns): %}
+                    <td class='color {{ (i+j) % 2 + 1 }}'></td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div> -->
+
+    </div>
+</body>
+
+</html>

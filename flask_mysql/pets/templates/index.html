@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper" style="margin: 0px auto">
+
+        <table border=1>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>TYPE</th>
+            </tr>
+
+            {% for pet in all_pets %}
+            <tr>
+                <td> {{ pet["pet_id"] }} </td>
+                <td> {{ pet["name"] }} </td>
+                <td> {{ pet["type"] }} </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        
+        <h1>Add a Pet</h1>
+        <form action="/add_pet" method="POST">
+            <p>Pet Name: <input type="text" name="pet_name"></p>
+            <p>Pet Type: <input type="text" name="pet_type"></p>
+            <input type="submit" value="Add Pet">
+        </form>
+
+    </div>
+
+</body>
+
+</html>

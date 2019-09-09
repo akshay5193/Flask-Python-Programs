@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- {% if color_mentioned %}
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .wrapper {
+            margin: 0px auto;
+            background-color: lightyellow;
+            height: auto;
+            text-align: center;
+        }
+
+        .repeat {
+            display: inline-block;
+            color: {{ color_mentioned }};
+            width: 20%;
+            margin: 20px;
+        }
+    </style>
+
+    {% endif %} -->
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .wrapper {
+            margin: 0px auto;
+            background-color: lightyellow;
+            height: auto;
+            text-align: center;
+        }
+
+        .repeat {
+            display: inline-block;
+            background-color: skyblue;
+            width: 25%;
+            height: 200px;
+            margin: 20px;
+            border: 3px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1>Hey, Welcome to the playground!</h1>
+        <h2> {{phrase}} </h2>
+        <br>
+        <h3>Displaying {{number}} blocks as mentioned by you in the URL!</h3>
+        {% for repeat in range(number) %}
+
+        <div class="repeat">
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
+
+</body>
+
+</html>

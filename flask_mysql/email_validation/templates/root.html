@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="wrapper" style="margin: 0px auto; width: 80%; background-color: lightblue; text-align: center;">
+
+        <h1 class="display-4">Email Validations</h1>
+        <hr>
+
+        <form action="/validate" method="POST">
+            <h4>Please Enter The Email For Validating</h4>
+            <br>
+            <input type="text" name="email" style="width: 30%;">
+            <br><br>
+
+            {% with messages = get_flashed_messages() %}
+            <!-- declare a variable called messages -->
+            {% if messages %}
+            <!-- check if there are any messages -->
+            {% for message in messages %}
+            <!-- loop through the messages -->
+            <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <br>
+            <input type="submit" class="btn btn-primary" value="Validate">
+        </form>
+
+        <br><br>
+        <div class="container" style="width: 40%">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for email in all_emailids %}
+
+                    <tr>
+                        <th scope="row"> {{ email["email_id"] }} </th>
+                        <td> {{ email["email"] }} </td>
+                        <td> <a class="btn btn-warning" href="/delete/ {{ email['email_id'] }} "> DELETE </a> </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <br>
+    </div>
+
+</body>
+
+</html>

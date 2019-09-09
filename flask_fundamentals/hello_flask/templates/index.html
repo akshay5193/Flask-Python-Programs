@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static' , filename='styles.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>This is a template!</h1>
+        <h3>Isn't this awesome?</h3>
+
+        <!-- {% for i in range (0,3): %}
+        <h4>for loops in html file using flask</h4>
+        {% endfor %}
+
+        {{ front_value }}
+
+        <br>
+        {% for users in users %}
+        <p> {{users['name']}} </p>
+        {% endfor %} -->
+
+        <form action="/register" method="POST">
+            <p>Name: <input type="text" name="first_name" id=""></p>
+            <input type="submit" class="submit" value="Add User">
+        </form>
+
+    </div>
+
+    <h1>Random Numbers</h1>
+    {% for number in random_numbers %}
+    <p>{{ number }}</p>
+    {% endfor %}
+    <h1>Students</h1>
+    {% for student in students %}
+    <p>{{ student['name'] }} - {{ student['age'] }}</p>
+    {% endfor %}
+
+
+    
+
+</body>
+
+</html>

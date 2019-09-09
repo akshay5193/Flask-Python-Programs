@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <h1>Result Page</h1>
+        <h2>Submitted Information</h2>
+
+        <!-- <p>Name: {{ name_template }} </p>
+        <p>Location: {{ location_template }} </p>
+        <p>Favorite Langauage: {{ language_template }} </p>
+        <p>Comment: {{ comment_template }} </p> -->
+
+    </div>
+
+    <div class="survey_wrapper">
+
+        {% for survey in surveys %}
+        <p>Name: {{ survey["surveyer_fname"] + " " + survey["surveyer_lname"] }} </p>
+        <p>Location: {{ survey["dojo_location"] }} </p>
+        <p>Favorite Langauage: {{ survey["favorite_language"] }} </p>
+        <p>Comment: {{ survey["comment"] }} </p>
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
